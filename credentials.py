@@ -1,2 +1,8 @@
-  def __init__(password_title,my_user_name,password):
-        def __init__(self,first_name,last_name,phone_number,email):
+  def __init__(self,title,my_user_name,password):
+      
+    Args:
+        password_title: New password title .
+        user_name : New password user name.
+        password: New password password.
+
+ 
