@@ -1,4 +1,5 @@
 import unittest # Importing the unittest module
+
 from credentials import credentials # Importing the credentials class
 
 class Testcredentials(unittest.TestCase):
@@ -14,12 +15,13 @@ class Testcredentials(unittest.TestCase):
         Set up method to run before each test cases.
         '''
         self.new_credentials = credentials("facebook","loise","lo15e") # create credentials object
+
     def test_init(self):
         '''
-        test_init test case to test if the object is initialized properly
+        test_init test case to test if the object is initialized properlymy_userna
         '''
         self.assertEqual(self.new_credentials.account_name,"facebook")
-        self.assertEqual(self.new_credentials.my_user_name,"loise")
+        self.assertEqual(self.new_credentials.my_username,"loise")
         self.assertEqual(self.new_credentials.password,"lo15e")
 
     def test_save_credentials(self):
@@ -36,9 +38,19 @@ class Testcredentials(unittest.TestCase):
             objects to our credentials_list
             '''
             self.new_credentials.save_credentials()
-            test_credentials = credentials("Test","user","loise","test@user.com") 
+            test_credentials = credentials("Test","title","my_username","pasword") 
             test_credentials.save_credentials()
             self.assertEqual(len(credentials.credentials_list),2)
+    def test_delete_credentials(self):
+            '''
+            test_delete_credentials to test if we can remove a credentials from our credentials list
+            '''
+            self.new_credentials.save_credentials()
+            test_credentials = credentials("user","my_username","password") # new credentials
+            test_credentials.save_credentials()
 
-    if __name__ == '__main__':
-        unittest.main()
+            self.new_credentials.delete_credentials()# Deleting a credentials object
+            self.assertEqual(len(credentials.credentials_list),1)
+
+if __name__ == '__main__':
+    unittest.main()

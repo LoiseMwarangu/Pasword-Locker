@@ -5,9 +5,9 @@ class credentials:
     """ 
     credentials_list = []
 
-    def __init__(self,account_name,my_user_name,password):
+    def __init__(self,account_name,my_username,password):
         self.account_name = account_name
-        self.user_name = my_user_name
+        self.user_name = my_username
         self.password = password
  
 
@@ -18,4 +18,9 @@ class credentials:
         '''
         credentials.credentials_list.append(self)
 
-
+    @classmethod
+    def display_credentials(cls):
+        '''
+        method that returns the credential list
+        '''
+        return cls.credentials_list
