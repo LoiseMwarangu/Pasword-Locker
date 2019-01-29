@@ -24,3 +24,24 @@ class credentials:
         method that returns the credential list
         '''
         return cls.credentials_list
+    def delete_credentials(self):
+
+        '''
+        delete_credentials method deletes a saved credentials from the credentials_list
+        '''
+
+        credentials.credentials_list.remove(self)
+    @classmethod
+    def find_by_number(cls,passwor:
+        '''
+        Method that takes in a password and returns a credentials that matches that password.
+
+        Args:
+            password: password to search for
+        Returns :
+            credentials of person that matches the password.
+        '''
+
+        for credentials in cls.credentials_list:
+            if credentials.password == passwor:
+                return credentials
