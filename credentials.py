@@ -11,13 +11,11 @@ class credentials:
         self.password = password
  
 
-    credentials_list = [] # Empty credentials list
+    credentials_list = [] 
     def save_credentials(self):
         '''
         save_credentials method saves credentials objects into credentials_list
         '''
         credentials.credentials_list.append(self)
-
-   
 
 

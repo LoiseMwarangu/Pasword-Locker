@@ -3,6 +3,11 @@ from credentials import credentials # Importing the credentials class
 
 class Testcredentials(unittest.TestCase):
 
+    def tearDown(self):
+        '''
+        tearDown method that does clean up after each test case has run.
+        '''
+        credentials.credentials_list = []
 
     def setUp(self):
         '''
@@ -24,26 +29,16 @@ class Testcredentials(unittest.TestCase):
         '''
         self.new_credentials.save_credentials() # saving the new credentials
         self.assertEqual(len(credentials.credentials_list),1)
+
     def test_save_multiple_credentials(self):
             '''
             test_save_multiple_credentials to check if we can save multiple credentials
             objects to our credentials_list
             '''
             self.new_credentials.save_credentials()
-            test_credentials = credentials("Test","user","loise","test@user.com") # new credentials
-            test_credentials.save_credentials()
-            self.assertEqual(len(credentials.credentials_list),2)
-    def test_save_multiple_credentials(self):
-            '''
-            test_save_multiple_credentials to check if we can save multiple credentials
-            objects to our credentials_list
-            '''
-            self.new_credentials.save_credentials()
-            test_credentials = credentials("Test","user","0712345678","test@user.com") # new credentials
+            test_credentials = credentials("Test","user","loise","test@user.com") 
             test_credentials.save_credentials()
             self.assertEqual(len(credentials.credentials_list),2)
 
     if __name__ == '__main__':
         unittest.main()
-
-    
