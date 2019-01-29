@@ -1,8 +1,12 @@
-  def __init__(self,title,my_user_name,password):
-      
-    Args:
-        password_title: New password title .
-        user_name : New password user name.
-        password: New password password.
+class credentials:
 
+    """
+    Class that generates new instances of credentials.
+    """ 
+    credentials_list = []
+
+    def __init__(self,account_name,my_user_name,password):
+        self.account_name = account_name
+        self.user_name = my_user_name
+        self.password = password
  

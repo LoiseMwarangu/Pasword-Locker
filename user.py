@@ -1,6 +1,3 @@
-username= "its just me"
-password= "emtsujsti"
-
 print("Hello there, welcome to password locker")
 print()
 
