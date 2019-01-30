@@ -1,9 +1,9 @@
-class credentials:
+class Credential:
 
     """
     Class that generates new instances of credentials.
     """ 
-    credentials_list = []
+    Credential_list = []
 
     def __init__(self,account_name,my_username,password):
         self.account_name = account_name
@@ -11,7 +11,7 @@ class credentials:
         self.password = password
  
 
-    credentials_list = [] 
+    redential_list = [] 
     def save_credentials(self):
         '''
         save_credentials method saves credentials objects into credentials_list
