@@ -5,8 +5,9 @@ class Credential:
     """ 
     Credential_list = []
 
-    def __init__(self,account_name,my_username,password):
-        self.account_name = account_name
+    def __init__(self,view_password ,account,my_username,password):
+        self.view_password = view_password   
+        self.account = account
         self.user_name = my_username
         self.password = password
  
@@ -31,17 +32,3 @@ class Credential:
         '''
 
         credentials.credentials_list.remove(self)
-    @classmethod
-    def find_by_number(cls,passwor:
-        '''
-        Method that takes in a password and returns a credentials that matches that password.
-
-        Args:
-            password: password to search for
-        Returns :
-            credentials of person that matches the password.
-        '''
-
-        for credentials in cls.credentials_list:
-            if credentials.password == passwor:
-                return credentials
