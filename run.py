@@ -1,12 +1,15 @@
 import random
+
 from user import User
+
 from credentials import Credential
 
-def create_user_account(user_name,pass_word):
+
+def create_user_account( first_name, last_name, phone_number, email, password):
     """
     Function to create a new account
     """
-    new_user = User(user_name,pass_word)
+    new_user = User( first_name, last_name, phone_number, email, password)
     return new_user
 
 def create_credentials(view_password,account,login_name,pass_word):

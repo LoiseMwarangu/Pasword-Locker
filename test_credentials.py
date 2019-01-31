@@ -1,55 +1,52 @@
-import unittest # Importing the unittest module
-from credentials import Credential 
+import unittest
+from credentials import Credential
 
-class Testcredentials(unittest.TestCase):
+class TestCredential(unittest.TestCase):
+    """
+    Test class that defines test cases for the credential class behaviours
+    """
+    def setUp(self):
+        """
+        set up method to run before each test cases
+        """
+        self.new_credential = Credential("123456","twitter","nay","12345")
 
     def tearDown(self):
-        '''
-        tearDown method that does clean up after each test case has run.
-        '''
-        credentials.credentials_list = []
-
-    def setUp(self):
-        '''
-        Set up method to run before each test cases.
-        '''
-        self.new_credentials = credentials("facebook","loise","lo15e") # create credentials object
+        """
+        tearDown method that does clean up after each test case has run
+        """
+        Credential.credential_list = []
 
     def test_init(self):
-        '''
-        test_init test case to test if the object is initialized properly my_userna
-        '''
-        self.assertEqual(self.new_credentials.account_name,"facebook")
-        self.assertEqual(self.new_credentials.my_username,"loise")
-        self.assertEqual(self.new_credentials.password,"lo15e")
+        """
+        test_init test case to test if the object is initialized properly
+        """
+        self.assertEqual(self.new_credential.view_password,"123456")
+        self.assertEqual(self.new_credential.account,"twitter")
+        self.assertEqual(self.new_credential.login,"nay")
+        self.assertEqual(self.new_credential.password,"12345")
 
-    def test_save_credentials(self):
-        '''
-        test_save_credentials test case to test if the credentials object is saved into
-         the credentials list
-        '''
-        self.new_credentials.save_credentials() # saving the new credentials
-        self.assertEqual(len(credentials.credentials_list),1)
+    def test_save_credential(self):
+        """
+        test_save_credential test case to test if the credential object is saves into
+        """
+        self.new_credential.save_credential()
+        self.assertEqual(len(Credential.credential_list),1)
 
-    def test_save_multiple_credentials(self):
-            '''
-            test_save_multiple_credentials to check if we can save multiple credentials
-            objects to our credentials_list
-            '''
-            self.new_credentials.save_credentials()
-            test_credentials = credentials("Test","title","my_username","pasword") 
-            test_credentials.save_credentials()
-            self.assertEqual(len(credentials.credentials_list),2)
-    def test_delete_credentials(self):
-            '''
-            test_delete_credentials to test if we can remove a credentials from our credentials list
-            '''
-            self.new_credentials.save_credentials()
-            test_credentials = credentials("user","my_username","password") # new credentials
-            test_credentials.save_credentials()
+    def test_save_multiple_credential(self):
+        """
+        test_save_multiple_credential to check if one can save multiple credentials
+        """
+        self.new_credential.save_credential()
+        test_credential = Credential("123456","test","login","09876")
+        test_credential.save_credential()
+        self.assertEqual(len(Credential.credential_list),2)
 
-            self.new_credentials.delete_credentials()# Deleting a credentials object
-            self.assertEqual(len(credentials.credentials_list),1)
+    def test_display_all_credentials(self):
+        """
+        test_display_all_credentials to returns a list of all credentials saved
+        """
+        self.assertEqual(Credential.display_credentials(),Credential.credential_list)
 
 if __name__ == '__main__':
     unittest.main()

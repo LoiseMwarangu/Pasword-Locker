@@ -13,7 +13,7 @@ class Credential:
         self.password = password
  
 
-    redential_list = [] 
+    credential_list = [] 
     def save_credentials(self):
         '''
         save_credentials method saves credentials objects into credentials_list
