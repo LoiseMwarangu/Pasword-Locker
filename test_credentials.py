@@ -1,6 +1,5 @@
 import unittest # Importing the unittest module
-
-from credentials import credentials # Importing the credentials class
+from credentials import Credential 
 
 class Testcredentials(unittest.TestCase):
 
@@ -18,7 +17,7 @@ class Testcredentials(unittest.TestCase):
 
     def test_init(self):
         '''
-        test_init test case to test if the object is initialized properlymy_userna
+        test_init test case to test if the object is initialized properly my_userna
         '''
         self.assertEqual(self.new_credentials.account_name,"facebook")
         self.assertEqual(self.new_credentials.my_username,"loise")
