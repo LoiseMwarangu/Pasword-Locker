@@ -139,3 +139,5 @@ def main():
             print("Sorry, I didn't get that. Please use the short codes\n")
 
 
+if __name__ == '__main__':
+    main()
