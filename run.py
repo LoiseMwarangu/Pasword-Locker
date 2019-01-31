@@ -39,3 +39,31 @@ def display_credentials():
      Function that returns the credentials list
      """
      return Credential.display_credentials()
+def main():
+    print("Hello! Welcome to the Password Locker. please enter your name")
+    u_name = input()
+    print("\n")
+    print(f"Hello {u_name}.")
+    while True:
+        print("\nUse these short codes below:")
+        print("." * 40)
+        print("\n ca - create an account, cc - create credentials, gp - generate password, cp - create own password, ex - exit password locker, dc - display credentials")
+        short_code = input().lower()
+
+        if short_code == 'ca':
+            print("New account")
+            print("." * 14)
+
+            print("\nEnter your user name")
+            print("."*40)
+            user_name = input()
+
+            print("\nEnter a password")
+            print("."*40)
+            pass_word = input()
+
+            save_user_account(create_user_account(user_name,pass_word))
+
+            print("\n")
+            print(f"New Account **{user_name}** created.\n")
+
