@@ -1,7 +1,7 @@
+#!/usr/bin/env python3.6
 import random
 from user import User
 from credentials import Credential
-
 
 def create_user_account(first_name, last_name, phone_number, email, password):
     """
@@ -46,13 +46,13 @@ def main():
     print("\n")
     print(f"Hello {u_name}.")
     while True:
-        print("\nUse these short codes below:")
+        print("\nplease Use the short codes below for selection:")
         print("." * 40)
         print("\n ca - create an account, cc - create credentials, gp - generate password, cp - create own password, ex - exit password locker, dc - display credentials")
         short_code = input().lower()
 
         if short_code == 'ca':
-            print("New account")
+            print("\nNew account")
             print("." * 14)
 
             print("\nEnter your user name")
@@ -63,7 +63,7 @@ def main():
             print("."*40)
             pass_word = input()
 
-            save_user_account(create_user_account(user_name,pass_word))
+            save_user_account(create_user_account(first_name, last_name, phone_number, email, password))
 
             print("\n")
             print(f"New Account **{user_name}** created.\n")
@@ -78,7 +78,7 @@ def main():
             print("."*20)
             user_password_input = input()
             view_password = user_password_input
-            if check_existing_users(user_password_input):
+        if check_existing_users(user_password_input):
                 print("\nWelcome back!")
                 print("New Credential")
                 print("." *20)
@@ -95,18 +95,19 @@ def main():
                 print("."*20)
                 print("'gp' - program to generate your password for you, 'cp' - create your own password")
                 password_creation_input = input()
-                if password_creation_input == "cp":
+        elif short_code == 'gp':
+            if password_creation_input == "cp":
                     print("\nEnter your password")
                     print("."*20)
                     pass_word = input()
-                elif password_creation_input == "gp":
+            elif password_creation_input == "gp":
                     chars = "abcdefghijklmnopqrstuvwxyz1234567890"
                     pass_word = "".join(random.choice(chars) for _ in range(8))
                     print(f"\nYour password is: **{pass_word}**")
 
-                save_credentials(create_credentials(view_password,account,login_name,pass_word))
-                print("\n")
-                print(f"New credentials **{account}**, **{login_name}**, **{pass_word}** created")
+                    save_credentials(create_credentials(view_password,account,login_name,pass_word))
+                    print("\n")
+                    print(f"New credentials **{account}**, **{login_name}**, **{pass_word}** created")
 
             else:
                 print("Wrong password or username. Please Try again.\n Username?")

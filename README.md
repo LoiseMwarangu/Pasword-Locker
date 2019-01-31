@@ -5,7 +5,7 @@ Loise Mwarangu (https://github.com/LoiseMwarangu)
 # Description
 This is a terminal based python program that allows its users to store their various accounts' credentials.These include account name,account username and password.The program also generates new passwords at the request of the user.
 
-#Setup/Installation Requirements
+# Setup/Installation Requirements
 To start using this project use the following commands:
 
 * git clone https://github.com/LoiseMwarangu/Password-Locker

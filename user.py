@@ -1,6 +1,6 @@
 import pyperclip
 class User:
-        """
+    """
     Class that generates new instances of users
     """ 
     details_list = []
@@ -21,21 +21,6 @@ class User:
         Deletes user profile from details_list
         '''
         User.details_list.remove(self)
-
-    @classmethod
-    def find_by_number(dls,number):
-        '''
-        Method that takes in a number and returns a user profile that matches that number.
-        Args:
-            number: Phone number to search for
-        Returns :
-            User profile that matches the number.
-        '''
-
-        for user in dls.details_list:
-            if user.phone_number == number:
-                return user
-
     @classmethod
     def user_exist(dls, number):
          '''
@@ -51,9 +36,6 @@ class User:
                     return True
 
                     return False
-
-
-
     @classmethod
     def display_users(dls):
         '''
