@@ -33,3 +33,7 @@ class Credential:
         '''
 
         credentials.credentials_list.remove(self)
+    @classmethod
+    def copy_password(cls,number):
+        credentials_found = Credential.find_by_number(number)
+        pyperclip.copy(credentials_found.password)
